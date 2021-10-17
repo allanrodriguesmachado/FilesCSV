@@ -1,0 +1,15 @@
+{
+    "name": "allan/mvc",
+    "autoload": {
+        "psr-4": {
+            "App\\": "app"
+        }
+    },
+    "authors": [
+        {
+            "name": "Allan Rodrigues",
+            "email": "allan.rodrigues14@hotmail.com"
+        }
+    ],
+    "require": {}
+}
