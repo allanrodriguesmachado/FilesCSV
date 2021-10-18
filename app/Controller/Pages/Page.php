@@ -5,7 +5,7 @@ namespace App\Controller\Pages;
 use \App\Utils\View;
 
 /**
- * Método responsável por retornar o contúdo (VIEW) da PÁGINA
+ * Method responsible for returning the content (VIEW) of the PAGE
  */
 class Page
 {

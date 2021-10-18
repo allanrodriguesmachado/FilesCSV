@@ -6,20 +6,17 @@ use \App\Utils\View;
 use \App\Model\Entity\Organization;
 
 /**
- * Método responsável por retornar o contúdo (VIEW) da HOME
+ * Method responsible for returning the content (VIEW) of the HOME
  */
 class Home extends Page
 {
     public static function getHome()
     {
         $obOrganization = new Organization();
-
-
         $content = View::render('pages/home', [
             'name' => $obOrganization->name,
-            'description' => $obOrganization->description,
-            'site' => $obOrganization->site
         ]);
-        return parent::getPage('Portal - Teste', $content);
+
+        return parent::getPage('Home - Portal', $content);
     }
 }

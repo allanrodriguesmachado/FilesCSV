@@ -8,7 +8,8 @@
     "authors": [
         {
             "name": "Allan Rodrigues",
-            "email": "allan.rodrigues14@hotmail.com"
+            "email": "allan.rodrigues14@hotmail.com",
+            "role": "Developer",
         }
     ],
     "require": {}
