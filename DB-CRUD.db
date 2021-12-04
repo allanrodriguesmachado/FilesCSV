@@ -1,0 +1,169 @@
+-- CRUD COMPLETO
+SELECT *
+FROM pessoa;
+SELECT *
+FROM address;
+
+--SELECT
+SELECT DISTINCT id_pessoa,
+                nome,
+                rua || ', ' ||
+                COALESCE(numero::VARCHAR, 'S/N') AS           numero,
+                municipio,
+                TO_CHAR(ts_inclusao, 'DD/MM/YYYY HH24:MI:SS') PersonInformation
+FROM pessoa
+         JOIN address ON pessoa.id_address = address.id_address
+WHERE nome ILIKE '%a%'
+  AND rua ILIKE '%m%'
+ORDER BY id_pessoa;
+
+-- UPDATE
+UPDATE pessoa
+SET ts_cancelamento = now()
+WHERE id_pessoa > 1;
+
+-- INSERT
+INSERT INTO pessoa
+VALUES (11, 'Ana', now(), 11, now(), false) RETURNING *;
+
+INSERT INTO address
+VALUES (11, 'Amazonas', 21, 'Fe', 'Ferraz') RETURNING *;
+
+-- DELETE
+DELETE
+FROM pessoa
+WHERE id_pessoa = 9;
+
+-- WHERE IS NOT NULL
+SELECT id_pessoa,
+       nome,
+       rua || ', ' ||
+       COALESCE(numero::VARCHAR, 'S/N') AS           numero,
+       TO_CHAR(ts_inclusao, 'DD/MM/YYYY HH24:MI:SS') PersonInformation,
+       TO_CHAR(ts_cancelamento, 'DD/MM/YYYY ')       CancelInformation
+FROM pessoa
+         JOIN address ON pessoa.id_address = address.id_address
+WHERE ts_cancelamento IS NOT NULL
+  AND ts_cancelamento IS NOT NULL
+ORDER BY id_pessoa;
+
+
+
+SELECT id_pessoa,
+       nome,
+       rua || ', ' ||
+       COALESCE(numero::VARCHAR, 'S/N') AS           numero,
+       TO_CHAR(ts_inclusao, 'DD/MM/YYYY HH24:MI:SS') ts_inclusao,
+       TO_CHAR(ts_cancelamento, 'HH24:MI:SS')        ts_cancelamento
+FROM pessoa
+         JOIN endereco ON pessoa.id_endereco = endereco.endereco
+WHERE ts_cancelamento IS NULL
+ORDER BY id_pessoa;
+
+
+SELECT id_pessoa,
+       nome,
+       rua || ', ' ||
+       COALESCE(numero::VARCHAR, 'S/N') AS               numero,
+       TO_CHAR(ts_inclusao, 'DD/MM/YYYY HH24:MI:SS')     ts_inclusao,
+       TO_CHAR(ts_cancelamento, 'DD/MM/YYYY HH24:MI:SS') ts_cancelamento
+FROM pessoa
+         JOIN address ON pessoa.id_address = address.id_address
+WHERE ts_cancelamento IS NOT NULL
+ORDER BY id_pessoa;
+
+
+ALTER TABLE pessoa
+    ADD CONSTRAINT id_address FOREIGN KEY (id_address) REFERENCES address (id_address);
+
+
+ts_inclusao
+timestamp without time zone NOT NULL DEFAULT now(),
+
+
+
+BEGIN;
+
+INSERT INTO endereco (rua, numero)
+VALUES ('Rio', '832');
+
+INSERT INTO pessoa (nome, id_endereco)
+VALUES ('Allan', currval('address_user_id_seq'));
+
+COMMIT;
+
+rollback;
+
+
+SELECT id_pessoa,
+       endereco.id_endereco,
+       nome,
+       id_pessoa       as                            DT_RowId,
+       ts_cancelamento as                            active rua || ', ' ||
+                COALESCE(numero, 'S/N') AS           endereco_completo, rua,
+       numero,
+       ts_cancelamento,
+       TO_CHAR(ts_inclusao, 'DD/MM/YYYY HH24:MI:SS') ts_inclusao
+FROM pessoa
+         JOIN endereco ON pessoa.id_endereco = endereco.id_endereco
+
+
+
+SELECT id_pessoa,
+       endereco.id_endereco,
+       nome,
+       id_pessoa               as                    DT_RowId,
+       ts_cancelamento         as                    active,
+       rua || ', ' ||
+       COALESCE(numero, 'S/N') AS                    endereco_completo,
+       rua,
+       numero,
+       ts_cancelamento,
+       TO_CHAR(ts_inclusao, 'DD/MM/YYYY HH24:MI:SS') ts_inclusao
+FROM pessoa
+         JOIN endereco ON pessoa.id_endereco = endereco.id_endereco
+
+
+
+--     //                        $teste = sprintf('INSERT INTO empresa (cnpj, razao_social, nome_fantasia)
+-- //               VALUES (%s, %s, %s)',  $request->getPost('cnpj'), $request->getPost('razao_social'), $request->getPost('nome_fantasia'));
+-- //
+-- //            echo '<pre>';
+-- //            print_r($teste);
+-- //            echo '</pre>';
+
+
+SELECT id_empresa,
+       razao_social,
+       cnpj,
+       nome_fantasia,
+       ddd_telefone,
+       telefone,
+       ddd_celular,
+       celular
+FROM empresa
+         JOIN contato ON empresa.id_contato = contato.id_contato
+         JOIN endereco_compl ON empresa.id_endereco = endereco_compl.id_endereco
+
+
+SELECT * FROM representante;
+
+SELECT * FROM endereco_compl
+       rua,
+       numero,
+       bairro,
+       complemento,
+       cidade,
+       municipio,
+       estado
+FROM endereco_compl
+         JOIN contato ON empresa.id_contato = contato.id_contato
+         JOIN endereco_compl ON empresa.id_endereco = endereco_compl.id_endereco
+
+
+
+
+ALTER TABLE empresa ADD CONSTRAINT fk_ende FOREIGN KEY (id_ende) REFERENCES endereco_compl (id_ende)
+
+
+ALTER TABLE empresa ADD COLUMN id_ende SERIAL

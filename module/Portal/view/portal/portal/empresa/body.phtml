@@ -1,0 +1,146 @@
+<main class="bg-blue center-main-empresa">
+	<div class="container">
+		<div class="row p-3">
+			<div class="card-body">
+				<div id="addClass" style="display: none">
+					<h4 class="card-title text-light">Empresa</h4>
+				</div>
+				<form class="formCnpj" id="FormCadastro">
+					<div>
+						<h5 class="text-center text-light removeClassCnpj" id="infoCnpj">Informe o CNPJ de sua
+							empresa</h5>
+						<div class="pesquisar input-group ">
+							<div class="mb-3">
+								<input type="text" class="form-control " name="cnpj" id="cnpj" placeholder="CNPJ"
+									   required="required" pattern="\d*"/>
+							</div>
+
+							<div class="text-center mt-4">
+								<button type="button" id="btnFilter"
+										class=" w-100 btn btn-danger removeClassCnpj">
+									<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+										 class="bi bi-search" viewBox="0 0 16 16">
+										<path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"></path>
+									</svg>
+									pesquisar
+								</button>
+							</div>
+						</div>
+					</div>
+
+					<div id="displayForm" style="display: none">
+						<div class="row mb-2">
+							<div class="col-md-6 mb-2">
+								<input type="text" class="form-control" placeholder="Razão Social"
+									   id="razao_social"
+									   name="razao_social"/>
+							</div>
+
+							<div class="col-md-6 mb-2">
+								<input type="text" class="form-control" id="nome_fantasia" placeholder="Nome Fantasia"
+									   name="nome_fantasia">
+							</div>
+						</div>
+
+						<div class="row mb-2">
+							<div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-2 mb-2">
+								<input type="text" class="form-control" maxlength="2" size="2" placeholder="DDD"
+									   id="ddd_telefone"
+									   name="ddd_telefone" pattern="\d*"/>
+							</div>
+
+							<div class="col-8 col-sm-9 col-md-4 col-lg-4 col-xl-4 mb-2">
+								<input type="text" class="form-control" placeholder="Telefone" id="telefone"
+									   name="telefone" pattern="\d*"/>
+							</div>
+
+							<div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-2 mb-2">
+								<input type="text" class="form-control" placeholder="DDD"
+									   id="ddd_celular"
+									   name="ddd_celular" pattern="\d*"/>
+							</div>
+
+							<div class="col-8 col-sm-9 col-md-4 col-lg-4 col-xl-4 mb-2">
+								<input type="text" class="form-control" placeholder="Celular" id="celular"
+									   name="celular" pattern="\d*"/>
+							</div>
+						</div>
+
+						<h4 class="card-title text-light">Endereço</h4>
+
+						<div class="row mb-2">
+							<div class="col-6 col-md-3 mb-2">
+								<input type="text" class="form-control" placeholder="CEP" id="cep"
+									   name="cep" required="required" pattern="\d*">
+							</div>
+
+							<div class="col-6 col-md-4 mb-2">
+								<button type="button" class="btn btn-danger" id="btnPesquisarCep">
+									<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+										 class="bi bi-search" viewBox="0 0 16 16">
+										<path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+									</svg>
+								</button>
+							</div>
+						</div>
+
+						<div class="row mb-2">
+							<div class="col-12 col-md-5 mb-2">
+								<input type="text" class="form-control" placeholder="Rua" name="rua" id="rua" disabled>
+							</div>
+
+							<div class="col-4 col-md-2 mb-2">
+								<input type="text" class="form-control" placeholder="Nº" name="numero" id="numero"
+									   pattern="[0-9]+$" disabled>
+							</div>
+
+							<div class="col-8 col-md-5 mb-2">
+								<input type="text" class="form-control" placeholder="Complemento"
+									   id="complemento" name="complemento" disabled>
+							</div>
+						</div>
+
+						<div class="row mb-2">
+							<div class="col-md-6 mb-2">
+								<input type="text" class="form-control" placeholder="Bairro" id="bairro" name="bairro"
+									   disabled>
+							</div>
+
+							<div class="col-md-6 mb-2">
+								<input type="text" class="form-control" placeholder="Municipio" id="municipio"
+									   name="municipio" disabled>
+							</div>
+						</div>
+
+						<div class="row mb-2">
+							<div class="col-md-6 mb-2">
+								<input type="text" class="form-control " placeholder="estado" id="estado" name="estado"
+									   disabled>
+							</div>
+
+							<div class="col-md-6 mb-2">
+								<input type="text" class="form-control tex" placeholder="Cidade" id="cidade"
+									   name="cidade" disabled>
+							</div>
+						</div>
+
+						<div class="row mb-2 text-center">
+							<div class="mb-2">
+								<button type="button" id="btnCadastrarEmpresa" class="btn btn-danger ">
+									<svg xmlns="http://www.w3.org/2000/svg" width="16" height="22"
+										 fill="currentColor"
+										 class="bi bi-building" viewBox="0 0 16 16">
+										<path fill-rule="evenodd"
+											  d="M14.763.075A.5.5 0 0 1 15 .5v15a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5V14h-1v1.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V10a.5.5 0 0 1 .342-.474L6 7.64V4.5a.5.5 0 0 1 .276-.447l8-4a.5.5 0 0 1 .487.022zM6 8.694 1 10.36V15h5V8.694zM7 15h2v-1.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 .5.5V15h2V1.309l-7 3.5V15z"></path>
+										<path d="M2 11h1v1H2v-1zm2 0h1v1H4v-1zm-2 2h1v1H2v-1zm2 0h1v1H4v-1zm4-4h1v1H8V9zm2 0h1v1h-1V9zm-2 2h1v1H8v-1zm2 0h1v1h-1v-1zm2-2h1v1h-1V9zm0 2h1v1h-1v-1zM8 7h1v1H8V7zm2 0h1v1h-1V7zm2 0h1v1h-1V7zM8 5h1v1H8V5zm2 0h1v1h-1V5zm2 0h1v1h-1V5zm0-2h1v1h-1V3z"></path>
+									</svg>
+									Cadastrar
+								</button>
+							</div>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</main>
