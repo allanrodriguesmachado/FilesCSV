@@ -74,7 +74,7 @@ $(document).ready(function () {
                 bootbox.alert({
                     message: response.message
                 });
-                return;
+
             }
         )
     });

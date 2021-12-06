@@ -171,10 +171,15 @@
 }
 
 .center-main-empresa {
-    height: 100%;
+    height: 90vh;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.card-body {
+    border-radius: 10px;
+    background: #ffffffeb;
 }
 
 footer {
@@ -219,7 +224,7 @@ footer {
 }
 
 
-@media screen and (min-width: 301px) and (max-width: 600px) {
+@media screen and (min-width: 301px) and (max-width: 599px) {
     .col-5 {
         display: none;
     }
@@ -280,6 +285,13 @@ footer {
         /*margin-top: 50px;*/
     }
 
+    .center-main-empresa {
+        height: 88vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
     footer {
         font-size: 12px;
         padding: 5px;
@@ -287,7 +299,7 @@ footer {
     }
 }
 
-@media screen and (min-width: 601px) and (max-width: 900px) {
+@media screen and (min-width: 600px) and (max-width: 799px) {
     .col-5 {
         display: none;
     }
@@ -314,12 +326,19 @@ footer {
         font-size: 15px;
     }
 
+    .center-main-empresa {
+        height: 91vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
     footer {
         position: fixed;
     }
 }
 
-@media screen and (min-width: 901) and (max-width: 1100px) {
+@media screen and (min-width: 800px) and (max-width: 1100px) {
     .col-5 {
         display: none;
     }
@@ -346,12 +365,19 @@ footer {
         font-size: 15px;
     }
 
+    .center-main-empresa {
+        height: 92vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
     footer {
         position: fixed;
     }
 }
 
-@media screen and (min-width: 1101) and (max-width: 1400px) {
+@media screen and (min-width: 1101px) and (max-width: 1400px) {
     .col-5 {
         display: none;
     }
@@ -382,5 +408,3 @@ footer {
         position: fixed;
     }
 }
-
-
