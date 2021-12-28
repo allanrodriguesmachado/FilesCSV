@@ -4,6 +4,6 @@ Algoritmo "Exercicio 1.1"
 // Data atual  : 27/12/2021
 
 Inicio
-      escreva("Meu nome é Allan Rodrigues")
+      escreva("Meu nome Ã© Allan Rodrigues")
 
 Fimalgoritmo
