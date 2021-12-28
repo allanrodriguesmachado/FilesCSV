@@ -1,1 +1,0 @@
-docker exec -it portal_php bash

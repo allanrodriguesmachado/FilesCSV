@@ -1,6 +1,0 @@
-*
-!nginx
-!php5-fpm
-!php7-fpm
-!*.dist
-!.gitignore
